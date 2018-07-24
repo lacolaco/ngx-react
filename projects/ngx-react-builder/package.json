@@ -1,6 +1,6 @@
 {
   "name": "@lacolaco/ngx-react-builder",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "builders": "builders.json",
   "dependencies": {
     "webpack-merge": "^4.1.3",
