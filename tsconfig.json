@@ -9,20 +9,13 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "jsx": "react",
+    "jsxFactory": "createElement",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
     "paths": {
-      "ngx-react": [
-        "dist/ngx-react"
-      ],
-      "ngx-react/*": [
-        "dist/ngx-react/*"
-      ]
+      "@lacolaco/ngx-react": ["dist/ngx-react"],
+      "@lacolaco/ngx-react/*": ["dist/ngx-react/*"]
     }
   }
 }

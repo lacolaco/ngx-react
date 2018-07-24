@@ -1,0 +1,14 @@
+{
+  "builders": {
+    "build": {
+      "class": "./build",
+      "schema": "./build/schema.json",
+      "description": "NgxReact Builder"
+    },
+    "dev-server": {
+      "class": "./dev-server",
+      "schema": "./dev-server/schema.json",
+      "description": "NgxReact DevServer"
+    }
+  }
+}

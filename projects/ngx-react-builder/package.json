@@ -1,0 +1,14 @@
+{
+  "name": "@lacolaco/ngx-react-builder",
+  "version": "0.0.1",
+  "builders": "builders.json",
+  "dependencies": {
+    "webpack-merge": "^4.1.3",
+    "ts-loader": "^4.4.2"
+  },
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular-devkit/build-angular": ">=0.7.0"
+  }
+}
