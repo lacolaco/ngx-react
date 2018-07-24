@@ -1,9 +1,10 @@
 {
-  "name": "@lacolaco/ngx-jsx",
+  "name": "@lacolaco/ngx-react",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
-    "@types/react": "^16.0.0"
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   }
 }

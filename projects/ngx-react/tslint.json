@@ -4,13 +4,13 @@
         "directive-selector": [
             true,
             "attribute",
-            "jsx",
+            "react",
             "camelCase"
         ],
         "component-selector": [
             true,
             "element",
-            "jsx",
+            "react",
             "kebab-case"
         ]
     }

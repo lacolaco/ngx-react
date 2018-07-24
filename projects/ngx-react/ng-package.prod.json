@@ -1,7 +1,6 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/ngx-jsx",
-  "deleteDestPath": false,
+  "dest": "../../dist/ngx-react",
   "lib": {
     "entryFile": "src/public_api.ts"
   }

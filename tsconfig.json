@@ -17,11 +17,11 @@
       "dom"
     ],
     "paths": {
-      "ngx-jsx": [
-        "dist/ngx-jsx"
+      "ngx-react": [
+        "dist/ngx-react"
       ],
-      "ngx-jsx/*": [
-        "dist/ngx-jsx/*"
+      "ngx-react/*": [
+        "dist/ngx-react/*"
       ]
     }
   }

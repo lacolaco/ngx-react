@@ -1,39 +1,39 @@
 import { Component } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { of as observableOf } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 
-import { JsxModule } from './ngx-jsx.module';
+import { ReactModule } from './ngx-react.module';
 
-const createTestElement = () => React.createElement('div', {}, 'Test Element');
+const createTestElement = (message: string) =>
+  React.createElement('div', {}, message);
 
 @Component({
   template: `
-  <jsx-render [element]="element"></jsx-render>
+  <react-render [element]="element"></react-render>
   `
 })
 class SimpleTestComponent {
-  element = createTestElement();
+  element = createTestElement('Test Element');
 }
 
 @Component({
   template: `
-  <jsx-render [element]="element$ | async"></jsx-render>
+  <react-render [element]="element$ | async"></react-render>
   `
 })
 class AsyncElementTestComponent {
-  element$ = observableOf(createTestElement());
+  element$ = new BehaviorSubject(createTestElement('Test Element'));
+
+  updateMessage() {
+    this.element$.next(createTestElement('Updated'));
+  }
 }
 
-describe('JsxRenderDirective', () => {
+describe('RenderDirective', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        JsxModule.forRoot({
-          jsxRenderer: ReactDOM.render
-        })
-      ],
+      imports: [ReactModule],
       declarations: [SimpleTestComponent, AsyncElementTestComponent]
     }).compileComponents();
   }));
@@ -65,10 +65,14 @@ describe('JsxRenderDirective', () => {
       fixture.detectChanges();
     });
 
-    it('should render', async(() => {
+    it('should render', () => {
       expect(component).toBeTruthy();
       const element = fixture.nativeElement as HTMLElement;
       expect(element.textContent).toEqual('Test Element');
-    }));
+
+      component.updateMessage();
+      fixture.detectChanges();
+      expect(element.textContent).toEqual('Updated');
+    });
   });
 });
